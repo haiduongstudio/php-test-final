@@ -30,8 +30,8 @@
 			</div>
 			<div class="header-right col-md-6">
 				<div class="row">
-					<form action="" method="POST" id="formtimkiem">
-						<input type="text" class="nhaptimkiem" name="search" placeholder="Nhập từ khóa..."><input type="submit" class="btn btn-success timkiem" name="search" value="Tìm kiếm">
+					<form action="index.php?ac=timkiem&mt=findProduct" method="POST" id="formtimkiem">
+						<input type="text" class="nhaptimkiem" name="txtsearch" placeholder="Nhập từ khóa..."><input type="submit" class="btn btn-success timkiem" name="search" value="Tìm kiếm">
 					</form>
 				</div>
 				<div class="row addressheader">

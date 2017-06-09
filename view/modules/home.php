@@ -3,7 +3,6 @@
 ?>
 	<section id="index-section">
 		<div class="container">
-			<p style="color: #0075CA;font-size: 14px;"><marquee behavior="alternate"><span style="color: #900;font-size: 15px;font-weight: bold">Website:</span> abcshop.com</marquee></p>
             <?php
             require 'view/layout/sidebar.php';
             ?>
@@ -15,6 +14,7 @@
                             <div class="sanpham">
                                 <p class="tieudesanpham"><?php echo $noibat['tensanpham']; ?></p>
                                 <img src="<?php echo $noibat['anhsp'];  ?>" class="anhsanpham">
+                                <p class="tieudesanpham"><?php echo number_format($sp['giasp'], 0, ',', '.'); ?></p>
                                 <div class="chitiet_button">
                                     <p><a class="myButton" href="index.php?ac=sanpham&mt=chitietsp&pr=<?php echo $noibat['id'] ?>">Chi Tiết</a></p>
                                     <p><button class="myButton2" onclick="addcart(<?php echo $noibat['id']; ?>)" id="add_cart_<?php echo $noibat['id']; ?>">Thêm Vào Giỏ Hàng</button></p>

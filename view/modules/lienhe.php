@@ -3,24 +3,41 @@ require 'view/layout/header.php';
 ?>
     <section id="index-section">
         <div class="container">
-            <p style="color: #0075CA;font-size: 14px;">
-                <marquee behavior="alternate"><span
-                            style="color: #900;font-size: 15px;font-weight: bold">Website:</span> abcshop.com
-                </marquee>
-            </p>
             <?php
             require 'view/layout/sidebar.php';
             ?>
+            <div class="header-left col-md-6">
+                <h2>Shopping cart</h2>
+                <p>120 - Nguyễn Trãi - Thanh Xuân - Hà Nội</p>
+                <p>Tel: 01649732758</p>
+            </div>
             <div class="col-md-9">
-                <div class="fb-page"
-                     data-href="https://www.facebook.com/Test-B%C3%A1n-h%C3%A0ng-Online-1914318105523901/"
-                     data-tabs="timeline" data-width="800" data-height="640" data-small-header="false"
-                     data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                    <blockquote cite="https://www.facebook.com/Test-B%C3%A1n-h%C3%A0ng-Online-1914318105523901/"
-                                class="fb-xfbml-parse-ignore"><a
-                                href="https://www.facebook.com/Test-B%C3%A1n-h%C3%A0ng-Online-1914318105523901/">Test
-                            Bán hàng Online</a></blockquote>
+                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                <div style='overflow:hidden;height:440px;width:700px;'>
+                    <div id='gmap_canvas' style='height:440px;width:700px;'></div>
+                    <style>#gmap_canvas img {
+                            max-width: none !important;
+                            background: none !important
+                        }</style>
                 </div>
+                <script type='text/javascript'>function init_map() {
+                        var myOptions = {
+                            zoom: 14,
+                            center: new google.maps.LatLng(21.000083, 105.816861),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                        marker = new google.maps.Marker({
+                            map: map,
+                            position: new google.maps.LatLng(21.000083, 105.816861)
+                        });
+                        infowindow = new google.maps.InfoWindow({content: '<strong>Cửa hàng Nuce Shop</strong><br>120 Nguyễn Trãi Thanh Xuân<br>'});
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow.open(map, marker);
+                        });
+                        infowindow.open(map, marker);
+                    }
+                    google.maps.event.addDomListener(window, 'load', init_map);</script>
             </div>
         </div>
     </section>
